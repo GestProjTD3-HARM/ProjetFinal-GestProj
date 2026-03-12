@@ -24,7 +24,7 @@ function creerConfettis() {
     const conteneur = document.getElementById('confettis');
 
     // Crée 600 confettis qui partent du haut; certains seront déjà "en cours" grâce à un délai négatif
-    for (let i = 0; i < 3000; i++) {
+    for (let i = 0; i < 1500; i++) {
         const confetti = document.createElement('div');
         confetti.className = 'confetti';
 
