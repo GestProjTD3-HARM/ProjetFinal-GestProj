@@ -4,7 +4,7 @@
 \usepackage[margin=2.5cm]{geometry} %Au lieu de 1.5cm ? Tu aimes mieux comme ça mon chouchou (anciennement 2.5cm)?
 \usepackage{hyperref}
 
-\title{Gestion de Projet Informatique - Mise en situation - TD003}
+\title{Gestion de Projet Informatique}
 \author{ALBRECHT Maël - HAMMOUDA Rayane\\MAISONNETTE Elouan - RICARD Noah}
 \date{Mars 2026}
 
@@ -35,7 +35,8 @@ Nous faisons tous les quatre partis de l'organisation \href{https://github.com/G
 %%%%%%%%%%%%%%%%%%%% %%%%%%%%%%%%%%%%%%%% %%%%%%%%%%%%%%%%%%%%
 
 \section*{\color{Green}[A2] Dépôt Git en ligne}
-Lien du dépôt en ligne : \url{https://github.com/GestProjTD3-HARM/ProjetFinal-GestProj}\newpage
+Lien du dépôt en ligne : \url{https://github.com/GestProjTD3-HARM/ProjetFinal-GestProj}
+\newpage
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.7\textwidth]{Repository.png}
@@ -72,11 +73,19 @@ Je m'apprête à créer une branche pour cette version car les marges du LaTeX m
 %%%%%%%%%%%%%%%%%%%% %%%%%%%%%%%%%%%%%%%% %%%%%%%%%%%%%%%%%%%%
 
 \section*{\color{BurntOrange}[B2] Intégration de version et tag}
+Les tags permettent une navigation simplifiée par la création de versions qui marquent les étapes majeurs dans l'évolution du projet, les versions donnent un titre plus officiel au commit auquel le tag est associé, en utilisant la commande:
+
+\begin{center}
+    \textbf{git tag -a v1.0 -m "première version"}
+\end{center}
+
+Grâce à cette commande ,on officialise une première version de notre site, que l'on peut annoter avec l'option "-a V1.0" qui enregistre la date et l'auteur du tage ainsi que le message renseigné après "-m message"
 
 %%%%%%%%%%%%%%%%%%%% %%%%%%%%%%%%%%%%%%%% %%%%%%%%%%%%%%%%%%%%
-
 \section*{\color{BurntOrange}[B3] Gestion des propositions de contributions}
 Nous avons utilisé les \textit{pull requests} lors de modifications majeures ou lorsque l'on préfère demander l'avis d'autres membres du groupe sur ces modifications avant l'intégration à la branche principale (\ref{fig:pll-rqst}).
+
+
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.7\linewidth]{Pull-Requests.png}
@@ -111,6 +120,13 @@ Nous nous sommes essayés à l'utilisation de \textit{issues} et \textit{milesto
 
 \section*{\color{BrickRed}[C2] Intégration continue}
 
+L'intégration continue dans GitHub correspond à une automatisation du travail de vérification après un push, qui a pour but de vérifier si le code marche correctement et la qualité de ce dernier, dans notre cas à chaque modification du document HTML/CSS/JS le site web est redeployé par GitHub, seulement après que le code ai été vérifié par l'automate.
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.7\linewidth]{IntégrationContinue.png}
+    \caption{L'ensemble des processus d'intégration continue}
+    \label{fig:worflows}
+\end{figure}
 %%%%%%%%%%%%%%%%%%%% %%%%%%%%%%%%%%%%%%%% %%%%%%%%%%%%%%%%%%%%
 
 \section*{\color{BrickRed}[C3] Gestion de submodule}
