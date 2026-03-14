@@ -1,10 +1,27 @@
 const bouton = document.getElementById('bt_fuis');
-document.addEventListener('mousemove',(souris) => {
+
+// Placement initial du bouton NON à côté du OUI au chargement
+window.addEventListener('DOMContentLoaded', () => {
+    const btnOui = document.getElementById('bt_oui');
+    const rectOui = btnOui.getBoundingClientRect();
+    bouton.style.top = rectOui.top + 'px';
+    bouton.style.left = (rectOui.right + 20) + 'px';
+});
+
+// Le bouton fuit
+document.addEventListener('mousemove', (souris) => {
     const rect = bouton.getBoundingClientRect();
-    const distance = Math.sqrt(Math.pow(souris.clientX - (rect.left + rect.width / 2),2)+Math.pow(souris.clientY - (rect.top + rect.height / 2),2));
-    if(distance < 80){
-        const newTop = Math.random() * (window.innerHeight - rect.height);
-        const newLeft = Math.random() * (window.innerWidth - rect.width);
+    const centreX = rect.left + rect.width / 2;
+    const centreY = rect.top + rect.height / 2;
+    
+    // Calcul de la distance entre la souris et le centre du bouton
+    const distance = Math.sqrt(Math.pow(souris.clientX - centreX, 2) + Math.pow(souris.clientY - centreY, 2));
+    
+    // Si la souris approche à moins de 80px
+    if (distance < 80) {
+        // On s'assure que le bouton reste visible dans la fenêtre (on soustrait la taille du bouton)
+        const newTop = Math.random() * (window.innerHeight - rect.height - 20) + 10;
+        const newLeft = Math.random() * (window.innerWidth - rect.width - 20) + 10;
 
         bouton.style.top = newTop + 'px';
         bouton.style.left = newLeft + 'px';
@@ -15,45 +32,35 @@ document.addEventListener('mousemove',(souris) => {
 const boutonOui = document.getElementById('bt_oui');
 
 boutonOui.addEventListener('click', () => {
-    // Crée les confettis
     creerConfettis();
 });
 
-// Fonction pour créer les confettis
+// Fonction pour créer les confettis 
 function creerConfettis() {
     const conteneur = document.getElementById('confettis');
 
-    // Crée 600 confettis qui partent du haut; certains seront déjà "en cours" grâce à un délai négatif
-    for (let i = 0; i < 1500; i++) {
+    for (let i = 0; i < 300; i++) { 
         const confetti = document.createElement('div');
         confetti.className = 'confetti';
 
-        // Taille aléatoire
-        const size = 6 + Math.random() * 12; // 6px à 18px
+        const size = 6 + Math.random() * 12;
         confetti.style.width = size + 'px';
         confetti.style.height = size + 'px';
-
-        // Position horizontale aléatoire, départ en haut
         confetti.style.left = Math.random() * 100 + '%';
-        confetti.style.top = '-10px';
+        confetti.style.top = '-20px';
 
-        // Couleur aléatoire
-        const couleurs = ['#ff6b9d', '#4ecdc4', '#ffe66d', '#95e1d3', '#f38181', '#aa96da'];
+        const couleurs = ['#ff6b9d', '#4ecdc4', '#ffe66d', '#95e1d3', '#f38181', '#aa96da', '#39C5BB'];
         confetti.style.backgroundColor = couleurs[Math.floor(Math.random() * couleurs.length)];
 
-        // Durée et délai (tous démarrent du haut; délai non-négatif pour qu'ils partent plus tard)
-        const duration = 2 + Math.random() * 4; // 2s à 6s
-        const delay = Math.random() * duration; // valeur entre 0 et duration
+        const duration = 2 + Math.random() * 4;
+        const delay = Math.random() * 2;
         confetti.style.animationDuration = duration + 's';
         confetti.style.animationDelay = delay + 's';
 
-        // Ajoute le confetti au conteneur
         conteneur.appendChild(confetti);
 
-        // Calcul du temps restant avant que l'animation ne se termine
-        const remaining = duration + delay;
         setTimeout(() => {
             confetti.remove();
-        }, (remaining + 0.5) * 1000);
+        }, (duration + delay + 0.5) * 1000);
     }
 }
