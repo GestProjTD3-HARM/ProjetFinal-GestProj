@@ -44,7 +44,7 @@ boutonOui.addEventListener('click', () => {
 function creerConfettis() {
     const conteneur = document.getElementById('confettis');
 
-    for (let i = 0; i < 300; i++) { 
+    for (let i = 0; i < 600; i++) { 
         const confetti = document.createElement('div');
         confetti.className = 'confetti';
 
