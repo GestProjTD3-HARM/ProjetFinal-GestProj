@@ -1,11 +1,32 @@
 const bouton = document.getElementById('bt_fuis');
-document.addEventListener('mousemove',(souris) => {
+const zone = document.querySelector('.interactive-zone'); // On cible la boîte bleue
+
+// Placement initial du bouton NON
+window.addEventListener('DOMContentLoaded', () => {
+    const btnOui = document.getElementById('bt_oui');
+    // On le place juste à côté au démarrage
+    bouton.style.top = '120px'; 
+    bouton.style.left = '60%';
+});
+
+// Le bouton fuit, mais reste dans la zone !
+document.addEventListener('mousemove', (souris) => {
     const rect = bouton.getBoundingClientRect();
-    const distance = Math.sqrt(Math.pow(souris.clientX - (rect.left + rect.width / 2),2)+Math.pow(souris.clientY - (rect.top + rect.height / 2),2));
     
-    if(distance < 80){
-        const newTop = Math.random() * (window.innerHeight - rect.height);
-        const newLeft = Math.random() * (window.innerWidth - rect.width);
+    // Calcul de la distance de la souris
+    const distance = Math.sqrt(
+        Math.pow(souris.clientX - (rect.left + rect.width / 2), 2) + 
+        Math.pow(souris.clientY - (rect.top + rect.height / 2), 2)
+    );
+    
+    // Si la souris approche
+    if (distance < 80) {
+        // On récupère la taille de la boîte bleue
+        const zoneRect = zone.getBoundingClientRect();
+        
+        // On calcule une position aléatoire strictement DANS cette boîte
+        const newTop = Math.random() * (zoneRect.height - rect.height - 20) + 10;
+        const newLeft = Math.random() * (zoneRect.width - rect.width - 20) + 10;
 
         bouton.style.top = newTop + 'px';
         bouton.style.left = newLeft + 'px';
@@ -19,7 +40,7 @@ boutonOui.addEventListener('click', () => {
     creerConfettis();
 });
 
-// Ta fonction pour créer les confettis
+//fonction pour créer les confettis
 function creerConfettis() {
     const conteneur = document.getElementById('confettis');
 

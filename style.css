@@ -74,17 +74,21 @@ h2 {
     margin-bottom: 15px;
 }
 
+/* Zone Interactive (Jeu) */
 .interactive-zone {
     background-color: rgb(77, 211, 255);
     text-align: center;
     padding: 3rem;
-    position: relative;
-    overflow: hidden;
+    position: relative; /* Très important : ça bloque le bouton "Non" à l'intérieur */
+    min-height: 300px; /* Donne de l'espace au bouton pour fuir */
+    border-radius: 12px;
 }
 
 .interactive-zone h2 {
     color: white;
     border: none;
+    position: relative;
+    z-index: 2;
 }
 
 .button-container {
@@ -92,32 +96,35 @@ h2 {
     display: flex;
     justify-content: center;
     gap: 20px;
+    align-items: center;
 }
 
 button {
     padding: 12px 30px;
     font-size: 18px;
     font-weight: bold;
-    color: white;
+    color: white !important; /* Force la couleur blanche du texte */
     cursor: pointer;
     border: none;
     border-radius: 50px;
     transition: transform 0.2s;
 }
 
-bt_oui {
-    background-color: #28a745;
+#bt_oui {
+    background-color: #28a745 !important; /* Force le bouton à être vert */
+    position: relative;
+    z-index: 2;
 }
 
 #bt_oui:hover {
     transform: scale(1.1);
 }
+
+/* Le bouton Non est bloqué dans la zone interactive */
 #bt_fuis {
-    background-color: #dc3545;
-    position: fixed; 
-    top: 50%;
-    left: 54%;
-    z-index: 1000;
+    background-color: #dc3545 !important; /* Force le bouton à être rouge */
+    position: absolute; 
+    z-index: 10;
 }
 
 footer {
