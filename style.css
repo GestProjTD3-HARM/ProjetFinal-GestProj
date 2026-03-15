@@ -153,3 +153,37 @@ footer {
     0% { transform: translateY(0) rotate(0deg); opacity: 1; }
     100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
 }
+
+
+::-webkit-scrollbar {
+    width: 60px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-image: url(https://png.pngtree.com/png-vector/20250528/ourmid/pngtree-high-quality-leek-image-clean-natural-look-no-shadows-png-image_16395537.png);
+    background-size: 140px 180px;
+    min-height: 180px ;
+    background-color: #d3d3d3;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+::-webkit-scrollbar-button{
+    background: #656565;
+}
+
+::-webkit-scrollbar-button:single-button:vertical:decrement{
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRm0eq0q441gBSIsChJ79XMUOpuc98JswoNjg&s);
+    background-repeat: no-repeat ;
+    height: 100px;
+    background-size:100px 100px ;
+    background-position: center;
+}
+
+::-webkit-scrollbar-button:single-button:vertical:increment{
+    background-image: url(https://preview.redd.it/miku-looking-down-at-you-v0-uciaoagnllmg1.jpeg?width=1170&format=pjpg&auto=webp&s=07362868be63bccae5fd78e63006174fc69ab848);
+    background-repeat: no-repeat ;
+    height: 100px;
+    background-size:100px 100px ;
+    background-position: center;
+}
