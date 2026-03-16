@@ -137,6 +137,23 @@ L'intégration continue dans GitHub correspond à une automatisation du travail 
 %%%%%%%%%%%%%%%%%%%% %%%%%%%%%%%%%%%%%%%% %%%%%%%%%%%%%%%%%%%%
 
 \section*{\color{BrickRed}[C3] Gestion de submodule}
+Les submodules permettents d'intégrer un autre dépôt Git au sein du projet, le submodules que l'on a choisi nous aide à rajouter des animations CSS à l'HTML à l'aide de classe prédéfinies dans le "sous-module".\\
+On utilisera la commande suivante pour intégrer le dépôt à partir de son l'URL:
+
+\begin{center}
+    \textbf{git submodule add https://github.com/animate-css/animate.css}
+    \\
+    \textbf{git add .gitmodules libs/animate.css}
+\end{center}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.7\linewidth]{ajout sub module .png}
+    \includegraphics[width=0.7\linewidth]{ajouter sub.png}
+    \caption{Intégration d'un sous-module au projet}
+    \label{fig:submodule}
+\end{figure}
+
 %%%%%%%%%%%%%%%%%%%% %%%%%%%%%%%%%%%%%%%% %%%%%%%%%%%%%%%%%%%%
 
 \section*{\color{BrickRed}[C4] Gestion par l'outil \textit{Projet} de \textit{GitHub}}
