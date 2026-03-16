@@ -165,7 +165,7 @@ button {
 
 ::-webkit-scrollbar-thumb {
     background-image: url(https://png.pngtree.com/png-vector/20250528/ourmid/pngtree-high-quality-leek-image-clean-natural-look-no-shadows-png-image_16395537.png);
-    background-size: 140px auto;
+    background-size: 140px 180px;
     min-height: 180px ;
     background-color: #eee;
     background-repeat: no-repeat;
@@ -177,17 +177,17 @@ button {
 }
 
 ::-webkit-scrollbar-button:single-button:vertical:decrement{
-    background-image: url(https://upload.wikimedia.org/wikipedia/en/thumb/4/4a/Mesmerizer_song.jpg/250px-Mesmerizer_song.jpg);
+    background-image: url(https://tse3.mm.bing.net/th/id/OIP.18PbNXDV75yGr5dEqTNfggAAAA?pid=ImgDet&w=203&h=304&c=7&o=7&rm=3);
     background-repeat: no-repeat ;
     height: 50px;
-    background-size: auto 45px ;
+    background-size:45px ;
     background-position: center;
 }
 
 ::-webkit-scrollbar-button:single-button:vertical:increment{
-    background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Tokyo_Tsukurou.svg/640px-Tokyo_Tsukurou.svg.png);
+    background-image: url(https://upload.wikimedia.org/wikipedia/en/thumb/4/4a/Mesmerizer_song.jpg/250px-Mesmerizer_song.jpg);
     background-repeat: no-repeat ;
     height: 50px;
-    background-size:auto 45px ;
+    background-size:45px ;
     background-position: center;
 }
